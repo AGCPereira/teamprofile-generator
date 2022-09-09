@@ -1,13 +1,13 @@
 const inquirer = require("inquirer");
 const fs = require("fs");
-const Employee = require('./lib/Employee');
+//const Employee = require('./lib/Employee');
 const Engineer = require('./lib/Engineer');
 const Intern = require('./lib/Intern');
 const Manager = require('./lib/Manager');
-const managerCard = require('./src/card-manager');
-const engineerCard = require('./src/card-engineer');
-const internCard = require('./src/card-intern');
-const wrapCards = require('./src/card-wrapper');
+const managerCard = require('./src/Manager.card');
+const engineerCard = require('./src/Engineer.card');
+const internCard = require('./src/Intern.card');
+const wrapCards = require('./src/wrap.card');
 
 const team = [];
 
@@ -116,7 +116,7 @@ function ask(questionArr) {
             createProfiles(team);
         }
     })
-    catch.((err) => console.log(err));
+    //catch.((err) => console.log(err));
 }
 function createProfiles(team) {
     
@@ -159,7 +159,7 @@ writeHTML(html);
 };
 
 function writeHtml(html) {
-    fs.writeFile('./dist/team-profile.html', html, (err) => {
+    fs.writeFile('./dist/team.profile.html', html, (err) => {
       if (err) throw err;
       console.log('HTML document created in /dist folder');
     });
